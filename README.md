@@ -29,7 +29,7 @@ git clone https://github.com/btc-daifuku/provisioning.git
 
 + aws cli 認証情報のsetting
 
-terraform.tfvars create
+terraform.tfvars create<br>
 ※ダブルクオート必須
 
 ```
@@ -58,6 +58,21 @@ terraform apply
 cd ./aws/2_auth/
 terraform plan -var 'ssh_key_name=hirosue'
 terraform apply -var 'ssh_key_name=hirosue'
+
+```
+
++ 環境破棄
+
+テスト利用の後は、必ず破棄してください。
+
+```
+#認証基盤のdestroy
+cd ./aws/2_auth/
+terraform destroy -var 'ssh_key_name=hirosue'
+
+#VPC周りのdestroy
+cd ./aws/1_network_storage/
+terraform destroy
 ```
 
 ## サービス情報
