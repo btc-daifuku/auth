@@ -56,8 +56,8 @@ terraform apply
 
 #認証基盤のprovisioning
 cd ./aws/2_auth/
-terraform plan -var 'ssh_key_name=hirosue'
-terraform apply -var 'ssh_key_name=hirosue'
+terraform plan
+terraform apply
 
 ```
 
@@ -68,7 +68,7 @@ terraform apply -var 'ssh_key_name=hirosue'
 ```
 #認証基盤のdestroy
 cd ./aws/2_auth/
-terraform destroy -var 'ssh_key_name=hirosue'
+terraform destroy
 
 #VPC周りのdestroy
 cd ./aws/1_network_storage/
